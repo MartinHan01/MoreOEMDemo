@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "androiddemo.han.com.moreoemdemo"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('./key/MartinHanTest.jks')
+            storePassword "111111"
+            keyAlias "111111"
+            keyPassword "111111"
+        }
+        release {
+            storeFile file('./key/MartinHanTest.jks')
+            storePassword "111111"
+            keyAlias "111111"
+            keyPassword "111111"
+        }
+    }
+
+    productFlavors {
+        oem1 {
+            resValue("string","dynamic_text","oem1的动态文字")
+            manifestPlaceholders = [
+                    oemIcon : "@drawable/oem1",
+            ]
+        }
+        oem2 {
+            resValue("string","dynamic_text","oem2的动态文字")
+            manifestPlaceholders = [
+                    oemIcon : "@drawable/oem2"
+            ]
+        }
+        oem3 {
+            resValue("string","dynamic_text","oem3的动态文字")
+            manifestPlaceholders = [
+                    oemIcon : "@drawable/oem3"
+            ]
+        }
+        oem4 {
+            resValue("string","dynamic_text","oem4的动态文字")
+            manifestPlaceholders = [
+                    oemIcon : "@drawable/oem4"
+            ]
+        }
+
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+}

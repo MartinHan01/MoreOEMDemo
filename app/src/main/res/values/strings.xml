@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MoreOEMDemo</string>
+
+
+    <string name="dynamic_text1">这是一个在编译期间动态替换的text</string>
+
+</resources>
