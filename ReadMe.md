@@ -101,10 +101,3 @@ public class Util {
 ```
 
 主要思路就是利用META_DATA来货渠道资源的int值并且返回到程序中，达到动态生成的目的
-
-[源码地址，点击进入](https://github.com/hanhan12312/MoreOEMDemo)
-
-
-
-
-
